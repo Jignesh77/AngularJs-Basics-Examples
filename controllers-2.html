@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Controllers in Ajs handling duplicate data</title>
+    </head>
+    <body ng-app="myApp">
+        <h3>Handling Duplicate data</h3>
+        <hr>
+        <div ng-controller="my">
+            <ul>
+            <li ng-repeat="item in marks track by $index">{{item}}</li>
+            </ul>
+        </div>
+        <script src="angular.js"></script>
+        <script>
+            var app = angular.module("myApp",[]);
+            app.controller("my",function($scope){
+                $scope.marks=[46,45,74,47,87,97,46];
+            })
+        </script>
+    </body>
+</html>

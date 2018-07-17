@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Login Functionality using Event Handling</title>
+    </head>
+    <body ng-app="login">
+        <h3>Login Form</h3>
+        <hr>
+        <div ng-controller="loginForm">
+            User Name : <input type="text" ng-model="uname"><br><br>
+            Password : <input type="password" ng-model="pwd"><br><br>
+            <input type="button" ng-click="login()" value="Login">
+            <h3>{{message}}{{uname}}</h3>
+        </div>
+        <script src="angular.js"></script>
+        <script>
+            var user = angular.module("login",[]);
+            user.controller("loginForm",function($scope){
+                $scope.uname="";
+                $scope.pwd="";
+                $scope.login=function(){
+                    if($scope.uname=="user"&&$scope.pwd=="pass"){
+                        $scope.message=" Welcome to login Form ";
+                    }
+                    else{
+                        $scope.message="Invalid Username or Password";
+                    }
+                };
+            });
+        </script>
+    </body>
+</html>

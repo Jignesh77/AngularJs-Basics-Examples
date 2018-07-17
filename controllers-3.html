@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Controllers in Ajs handling duplicate data</title>
+    </head>
+    <body ng-app="myApp">
+        <h3>controller with object</h3>
+        <hr>
+        <div ng-controller="my">
+           <table border="2" width="300">
+              <tr>
+                  <td>Stud ID</td>
+                  <td>{{student.sid}}</td>
+               </tr>
+               <tr>
+                   <td>Student Name</td> 
+                   <td>{{student.sname}}</td>
+               </tr>
+               <tr>
+                    <td>Course</td>
+                   <td>{{student.course}}</td>
+               </tr>
+               <tr>
+                    <td>Marks</td>
+                   <td>
+                       <ul>
+                            <li ng-repeat="item in student.marks track by $index" >{{$index+1}}:{{item}}</li>
+                       </ul>
+                   </td>
+               </tr>
+            </table>
+        </div>
+        <script src="angular.js"></script>
+        <script>
+            var app = angular.module("myApp",[]);
+            app.controller("my",function($scope){
+                $scope.student={sid:1007,sname:"Jignesh",course:"Angular",marks:[10,20,30,40,50]};
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>To Change the images based on mouseover Event </title>
+        <style>
+            .c1{
+                height: 50px;
+                width: 65px;
+                border: 2px solid blue;
+                margin: 10px;
+                padding: 5px;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body ng-app="bg">
+        <h4>change the BackGround Image based on mouse over event</h4>
+        <hr>
+        <div ng-controller="back">
+            <img ng-repeat="i in ar" class="c1" ng-src="images/{{i}}" ng-mouseover="jk($index)">
+            <br><br>
+            <img width="300" height="380" border="2" src="images/{{str}}">
+        </div>
+        <script src="angular.js"></script>
+        <script>
+            var im = angular.module("bg",[]);
+            im.controller("back",function($scope){
+                $scope.ar=["s1.png","s2.jpg","s3.jpg","s4.jpg","s7.jpg","s8.jpg","s11.jpg","s12.jpg","s13.jpg"];
+                $scope.str = "s9.jpg";
+                $scope.jk = function(x){
+                    $scope.str = $scope.ar[x];
+                };
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Filter the Products on base of Price</title>
+    </head>
+    <body ng-app="prod">
+        <h2>Products in Specified Price Range</h2>
+        <hr>
+        <div ng-controller="productfilter">
+            Select Min : 
+            <select ng-model = "m">
+                <option>500</option>
+                <option>1000</option>
+                <option>1500</option>
+                <option>2000</option>
+                <option>2500</option>
+                <option>3000</option>
+                <option>3500</option>
+                <option>4000</option>
+                <option>4500</option>
+                <option>5000</option>
+            </select>
+            Select Max : 
+            <select ng-model = "n">
+                <option>10000</option>
+                <option>15000</option>
+                <option>20000</option>
+                <option>25000</option>
+                <option>30000</option>
+                <option>35000</option>
+                <option>40000</option>
+                <option>45000</option>
+                <option>50000</option>
+                <option>55000</option>
+                <option>60000</option>
+                <option>65000</option>
+                <option>70000</option>
+            </select>
+            <br>
+            <br>
+            <table border="2">
+                <tr>
+                    <th>Product Name</th>
+                    <th>Brand</th>
+                    <th>Price</th>
+                </tr>
+                <tr ng-repeat="item in items|product:m:n">
+                    <td>{{item.name}}</td>
+                    <td>{{item.brand}}</td>
+                    <td>{{item.price}}</td>
+                </tr>
+            </table>
+        </div>
+        <script src="other/angular.js"></script>
+        <script src="other/product-filter-app.js"></script>
+    </body>
+</html>

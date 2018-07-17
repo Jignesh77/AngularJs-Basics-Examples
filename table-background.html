@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>To change the background of the table on the base of image or color selected</title>
+    </head>
+    <body ng-app="" ng-init="i='';c='orange'">
+        <table border="2px" bordercolor="red" style="border-collapse:collapse;" rule="all" bgcolor="{{c}}" background="images/{{i}}">
+            <tr>
+                <th>Stud ID</th>
+                <th>Stud Name</th>
+                <th>Stud Number</th>
+            </tr>
+            <tr>
+                <td>0007</td>
+                <td>Jignesh</td>
+                <td>7030444946</td>
+            </tr>
+            <tr>
+                <td>87</td>
+                <td>JigE</td>
+                <td>9922878487</td>
+            </tr>
+            <tr>
+                <td>97</td>
+                <td>Mj</td>
+                <td>9850188154</td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td>Jiggi</td>
+                <td>7588826248</td>
+            </tr>
+        </table><br>
+        <select ng-model="c" name="Color">
+            <option disabled value="" selected>Select Any 1 color</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="yellow">Yellow</option>
+        </select>
+         <select ng-model="i" name="Image">
+            <option value="" disabled>Selejp Any 1 Image</option>
+            <option value="s1.png">Salman 1</option>
+            <option value="s2.jpg">Salman 2</option>
+            <option value="s3.jpg">Salman 3</option>
+            <option value="s4.jpg">Salman 4</option>
+            <option value="s5.jpg">Salman 5</option>
+            <option value="s6.jpg">Salman 6</option>
+        </select>
+        <script src="angular.js"></script>
+    </body>
+</html>

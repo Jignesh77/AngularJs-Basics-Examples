@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>To display Course names in List Format</title>
+    </head>
+    <body>
+        <script>
+            var c = ["UI","MEAN","JAVA","PYTHON"];
+            function jk(){
+                var list = document.getElementById("u");
+                var str = "";
+                for(i in c){
+                    str=str+"<li>"+c[i]+"</li>";
+                }
+                list.innerHTML=str;
+            }
+            function mj(){
+                var n = document.getElementById("n").value;
+                c.push(n);
+                alert(c.length);
+                jk();
+            }
+        </script>
+        <div> 
+            <ul id="u">   </ul><br>
+            <input type="text" id="n" placeholder="course name">
+        </div>
+            <input type="button" id="b1" onclick="jk()" value="get">
+            <input type="button" id="b2" onclick="mj()" value="New">
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Controllers in Ajs handling duplicate data</title>
+        <style>
+            img{
+                margin: 10px;
+                padding: 5px;
+                height: 80px;
+                width: 60px;
+                border: 1px solid gray;               
+            }
+        </style>
+    </head>
+    <body ng-app="myApp">
+        <h3>Product Details</h3>
+        <hr>
+        <div ng-controller="my">
+            Product IS : {{prod.pid}}<br>
+            Product Name : {{prod.pname|uppercase}}<br>
+            Product Brand : {{prod.brand}}<br>
+            <img ng-repeat="item in prod.pictures track by $index" src="images/{{item}}">
+        </div>
+        <script src="angular.js"></script>
+        <script>
+            var app = angular.module("myApp",[]);
+            app.controller("my",function($scope){
+                $scope.prod={pid:1107,pname:'Canon Camera px420',brand:'Canon',pictures:['s1.png','s2.jpg','s3.jpg','s13.jpg','s12.jpg']};
+            })
+        </script>
+    </body>
+</html>

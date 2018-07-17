@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Student Details</title>
+    </head>
+    <body ng-app="sapp">
+        <h4>Student Details</h4>
+        <hr>
+        <div ng-controller="student">
+            Student Name : <input ng-model="srch.sname"><br><br>
+            Course : <select ng-model="srch.course">
+                <option>Angular</option>
+            <option>Mean Stack</option>
+            <option>Java</option>
+            <option>Python</option>
+            <option value="">All Courses</option>
+            </select><br><br>
+            <table border="2">
+                <tr>
+                    <th>Student Name</th>
+                    <th>Course Name</th>
+                </tr>
+                <tr ng-repeat="item in stud|filter:srch">
+                    <td>{{item.sname}}</td>
+                    <td>{{item.course}}</td>
+                </tr>
+            </table>
+        </div>
+        <script src="angular.js"></script>
+        <script>
+         var app = angular.module("sapp",[]);
+            app.controller("student",function($scope){
+                $scope.srch = {sname : " ",course : " "};
+                $scope.stud = [
+                    {sname : "Jignesh",course:"Angular"},
+                {sname:"Ankur",course:"Mean Stack"},
+                {sname:"Saurabh",course:"Java"},
+                {sname:"Jonty",course:"Python"}];
+            })
+        </script>
+    </body>
+</html>

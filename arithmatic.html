@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Arithmatic Operations</title>
+    </head>
+    <body>
+        <script>
+            function jk(btn){
+                var a = parseInt(document.getElementById("n1").value);
+                var b = parseInt(document.getElementById("n2").value);
+                var r = document.getElementById("r");
+                switch(btn.value){
+                       case "Add":
+                                    r.value = a+b;
+                                    break;
+                       case "Sub" : 
+                                    r.value = a-b;
+                                    break;
+                       case "Mul" : 
+                                    r.value = a*b;
+                                    break;
+                       case "Div" : 
+                                    r.value = a/b;
+                                    break;
+                       default : 
+                                    r.value = a%b;
+            }
+            }
+        </script>
+    </body>
+    Number 1 : <input type="text" id="n1">
+    Number 2 : <input type="text" id="n2">
+    Addition : <input type="text" id="r">
+    <input type="button" value="Add" onclick="jk(this)">
+    <input type="button" value="Sub" onclick="jk(this)">
+    <input type="button" value="Mul" onclick="jk(this)">
+    <input type="button" value="Div" onclick="jk(this)">
+    <input type="button" value="Mod" onclick="jk(this)">
+</html>

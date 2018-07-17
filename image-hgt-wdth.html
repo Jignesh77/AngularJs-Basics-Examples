@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <title>Control Image Height And Width using Angular Js</title>
+    </head>
+    <body ng-app="" ng-init="h:=180;w=130">
+        Height : <input type="range" ng-model="h" max="550" min="100">
+        Width : <input type="range" ng-model="w" max="500" min="50">
+        <img src="images/s11.jpg" height="{{h}}" width="{{w}}" border="2px">
+        <script src="angular.js"></script>
+    </body>
+</html>

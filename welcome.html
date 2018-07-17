@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Print Hello message based on user name</title>
+    </head>
+    <body>
+        <script>
+            function jk(){
+                var a = document.getElementById("user").value;
+                var b = document.getElementById("p");
+                var str ="Welcome <u>"+a+"</u>";
+                b.innerHTML =str;
+            }
+        </script>
+        User Name : <input type="text" name="user" id="user" onkeyup="jk()"><br>
+<!--        <input type="button" value="Print" onclick="jk()"><br>-->
+        <span id="p"></span>
+    </body>
+</html>

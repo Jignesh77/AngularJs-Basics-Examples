@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Processing collection of Courses</title>
+    </head>
+    <body ng-app="" ng-init="course=['HTML','CSS','BootStrap','JavaScript','jQuery','Angular Js','Node JS','Express Js','MongoDb']">
+        <table border="2">
+            <tr>
+                <th>Sr No</th>
+                <th>Course</th>
+            </tr>
+            <tr ng-repeat="item in course">
+                <td>{{$index+1}}</td>
+                <td>{{item}}</td>
+            </tr>
+        </table>
+        <script src="angular.js"></script>
+    </body>
+</html>

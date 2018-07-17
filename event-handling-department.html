@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Process Department Details using Some Event</title>
+    </head>
+    <body ng-app="dept">
+        <h3>Department Details</h3>
+        <hr>
+        <div ng-controller="department">
+            Department No : <input ng-model="deptNo">
+            <br><br>
+            Department Name : <input ng-model="deptName">
+            <br><br>
+            Loaction : <input ng-model="loc">
+            <br>
+            <input type="button" value="New Dept" ng-click="new()">
+            <br>
+            <br>
+            <table border="2">
+                <tr>
+                    <th>Department No</th>
+                    <th>Department Name</th>
+                    <th>Department Loaction</th>
+                    <th>Remove Department</th>
+                </tr>
+                <tr ng-repeat="item in dep">
+                    <td>{{item.deptNo}}</td>
+                    <td>{{item.deptName}}</td>
+                    <td>{{item.loc}}</td>
+                    <td><a href="#" ng-click="removeDept($index)">Remove</a></td>
+                </tr>
+            </table>
+        </div>
+        <script src="angular.js"></script>
+        <script>
+            var d = angular.module("dept",[]);
+            d.controller("department",function($scope){
+                $scope.deptNo = "";
+                $scope.deptName = "";
+                $scope.loc = "";
+                $scope.dep = [
+                    {deptNo:777,deptName:"Software Development",loc:"Mumbai"},
+                    {deptNo : 47,deptName:"Sales",loc:"Pune"},
+                    {deptNo:87,deptName:"Design",loc:"Mumbai"},
+                    {deptNo:4787,deptName:"Training",loc:"Banglore"}
+                ];
+                $scope.new = function(){
+                    var o = {};
+                    o.deptNo = $scope.deptNo;
+                    o.deptName = $scope.deptName;
+                    o.loc = $scope.loc;
+                    $scope.dep.push(o);
+                };
+                $scope.removeDept = function(x){
+                    $scope.dep.splice(x,1);
+                }
+            });
+        </script>
+    </body>
+</html>

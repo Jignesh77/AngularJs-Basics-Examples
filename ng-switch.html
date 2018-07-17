@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Student Details</title>
+        <style>
+            img{
+                border: 2px solid black;
+                width: 60px;
+                height: 65px;
+                padding: 4px;
+            }
+            .e1{
+                border: 1px solid blue;
+                width: 200px;
+                float: left;
+                text-align: center;
+                margin: 5px;
+                background-color: lightyellow;
+            }
+        </style>
+    </head>
+    <body ng-app="myApp">
+        <h3>Product Details</h3>
+        <hr>
+        <div ng-controller="product">
+            Choose the Display Mode : <select ng-model="x">
+            <option>List</option>
+            <option>Table</option>
+            <option>Div</option>
+            </select>
+            <div ng-switch="x">
+                <div ng-switch-when="List">
+                    <ol>
+                        <li ng-repeat="item in prod track by $index">{{item.pname}}--{{item.price}}</li>
+                    </ol>
+                </div>
+                <div ng-switch-when="Table">
+                    <table width="400" bgcolor="lightblue" border="2">
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Brand</th>
+                            <th>Picture</th>
+                        </tr>
+                        <tr ng-repeat="item in prod track by $index">
+                            <td>{{$index+1}}</td>
+                            <td>{{item.pname}}</td>
+                            <td>{{item.price}}</td>
+                            <td>{{item.brand}}</td>
+                            <td><img src="images/{{item.picture}}"</td>
+                        </tr>
+                    </table>
+                </div>
+                <div ng-switch-when="Div">
+                    <div class="e1" ng-repeat="item in prod track by $index">
+                        <span>{{item.pname}}</span>
+                        <span><img src="images/{{item.picture}}"></span>
+                        <span>Brand : {{item.brand}}</span>
+                        <span>Price in INR : {{item.price|currency:"Rs":0}}</span>
+                    </div>
+                </div>
+                    <div ng-switch-default>
+                        <h4>Default mode</h4>
+                    </div>
+            </div>
+        </div>
+        <script src="angular.js"></script>
+        <script>
+            var app = angular.module("myApp",[]);
+            app.controller("product",function($scope){
+                $scope.prod=[{price:1007,pname:"canon",brand:"canon",picture:"s1.png"},
+            {price:1008,pname:"galaxy j7 pro",brand:"Samsung",picture:"s9.jpg"},
+            {price:1009,pname:"iphone x",brand:"apple",picture:"s11.jpg"}];
+            })
+        </script>
+    </body>
+    
+</html>

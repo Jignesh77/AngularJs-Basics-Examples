@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>To demonstrate the Creation of service</title>
+    </head>
+    <body ng-app="serv">
+        <h2>Custom Service Creation</h2>
+        <hr>
+        <div ng-controller="createService">
+            Username : <input type="text" ng-model="t1"><br><br>
+            Password : <input type="password" ng-model="p1"><br><br>
+            <input type="button" ng-click="login()" value="Login"><br><br>
+            <span ng-show="x">Welcome to Login Page</span>
+        </div>
+        <script src="angular.js"></script>
+        <script src="other/login-service-app.js"></script>
+    </body>
+</html>

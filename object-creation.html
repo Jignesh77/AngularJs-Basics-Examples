@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Object Creation Techniques in JavaScript</title>
+    </head>
+    <body>
+        <script>
+            function obj1(){
+                var o1 = {fName:"Jignesh",lName:"Kukreja"};
+                var str = o1.fName+" "+o1.lName;
+                document.getElementById("s1").innerHTML = str;
+            }
+            function obj2(){
+                var o2 = {};
+                o2.fName = "Jonty";
+                o2.lName = "Agrawal";
+                var str = o2.fName+" "+o2.lName;
+                document.getElementById("s2").innerHTML =str;
+                var o3 = new Object();
+                o3.fName = "Puskar";
+                o3.lName = "Singh";
+                str = o3.fName+" "+o3.lName;
+                document.getElementById("s3").innerHTML =str;
+            }
+            function obj3(){
+                function stud(x,y){
+                    this.fName = x;
+                    this.lName = y;
+                }
+                var s = new stud("Firoz","Khan");
+                var str = s.fName+" "+s.lName;
+                document.getElementById("s4").innerHTML =str;
+            }
+        </script>
+        <div>
+            <span id="s1"></span><br>
+            <span id="s2"></span><br>
+            <span id="s3"></span><br>
+            <span id="s4"></span>
+        </div>
+        <input type="button" value="Type 1" onclick="obj1()">
+        <input type="button" value="Type 2" onclick="obj2()">
+        <input type="button" value="Type 3" onclick="obj3()">
+    </body>
+</html>

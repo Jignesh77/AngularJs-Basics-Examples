@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Limited Number of Records</title>
+    </head>
+    <body ng-app="rec">
+        <h4>To display only Limited Records</h4>
+        <hr>
+        <div ng-controller="record">
+            Select the number of Records to be displayed : <select ng-model="n">
+                <option>5</option>
+            <option>10</option>
+            <option>15</option>
+            <option>20</option>
+            <option>25</option>
+            </select>
+            <br><br>
+            <table border="2">
+                <tr>
+                    <th>Student Name</th>
+                    <th>Course</th>
+                </tr>
+                <tr ng-repeat="item in stud|limitTo:n">
+                    <td>{{item.sname}}</td>
+                    <td>{{item.course}}</td>
+                </tr>
+            </table>
+        </div>
+        <script src="angular.js"></script>
+        <script>
+            var app = angular.module("rec",[]);
+            app.controller("record",function($scope){
+                $scope.stud=[
+                    {sname:"Jignesh",course:"Mean Stack"},
+                    {sname:"Jonty",course:"UI"},
+                    {sname:"Saurabh",course:"BBA"},
+                    {sname:'Ankur',course:"Civil"},
+                    {sname:"Akash",course:"web"},
+                    {sname:"Shubham",course:"Ghanta"},
+                    {sname:"Payal",course:"Testing"},
+                    {sname:"Rutu",course:"FD"},
+                    {sname:"Jignesh",course:"Mean Stack"},
+                    {sname:"Jonty",course:"UI"},
+                    {sname:"Saurabh",course:"BBA"},
+                    {sname:'Ankur',course:"Civil"},
+                    {sname:"Akash",course:"web"},
+                    {sname:"Shubham",course:"Ghanta"},
+                    {sname:"Payal",course:"Testing"},
+                    {sname:"Rutu",course:"FD"},
+                    {sname:"Jignesh",course:"Mean Stack"},
+                    {sname:"Jonty",course:"UI"},
+                    {sname:"Saurabh",course:"BBA"},
+                    {sname:'Ankur',course:"Civil"},
+                    {sname:"Akash",course:"web"},
+                    {sname:"Shubham",course:"Ghanta"},
+                    {sname:"Payal",course:"Testing"},
+                    {sname:"Rutu",course:"FD"}
+                ];
+            })
+        </script>
+    </body>
+</html>

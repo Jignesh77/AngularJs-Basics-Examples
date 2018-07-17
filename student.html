@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Students Page</title>
+    </head>
+    <body>
+        <h2>Students Details</h2>
+        <hr>
+        <table border="2">
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+            </tr>
+            <tr ng-repeat = "item in studs">
+                <td>{{item.sroll}}</td>
+                <td>{{item.sname}}</td>
+            </tr>
+        </table>
+    </body>
+</html>

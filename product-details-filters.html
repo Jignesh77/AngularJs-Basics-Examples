@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Display Product Details with some filters</title>
+        <style>
+            #d1{
+                border: 2px solid blue;
+                padding: 5px;
+                font-size: 20px;
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body ng-app="myApp">
+        <h4>Product Details with some filters</h4>
+        <hr>
+        <div ng-controller="product" id="d1">
+            Product ID : {{prod.pid}}
+            <br><br>
+            Product Name ; {{prod.pname}}
+            <br><br>
+            Product Brand : {{prod.brand|lowercase}}
+            <br><br>
+            Product Price : {{prod.price|currency:"Rs"}}
+        </div>
+            <script src="angular.js"></script>
+            <script>
+              var app = angular.module("myApp",[]);
+                app.controller("product",function($scope){
+                    $scope.prod={pid:1047,pname:"Galaxy J7 pro",brand:"Samsung",price:21000}
+                })
+            </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Handling the Collection of Student Object</title>
+    </head>
+    <body>
+        <script>
+            function jk(){
+                var student =[{sid:"007",sname:"Jignesh"},{sid:"047",sname:"JigE"},{sid:"087",sname:"Jignesh87"},{sid:"87",sname:"Jiggi"},{sid:"8747",sname:"Jaggu"}];
+                var o1 = document.getElementById("tab1");
+                var str ="<tr><th>Sr No</th><th>Stud ID</th><th>Stud Name</th></tr>";
+                for(var i=0;i<student.length;i++){
+                    str = str + "<tr><td>"+(i+1)+"</td><td>"+student[i].sid+"</td><td>"+student[i].sname+"</td></tr>";
+                }
+                o1.innerHTML = str;
+            }
+        </script>
+        <table border="2px" rule="all" border-color="red" id="tab1" width="300">
+        
+        </table>
+        <input type="button" value="Student" onclick="jk()">
+    </body>
+</html>

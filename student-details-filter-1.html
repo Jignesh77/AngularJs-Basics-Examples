@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Student Details</title>
+    </head>
+    <body ng-app="sapp">
+        <h4>Student Details</h4>
+        <hr>
+        <div ng-controller="student">
+            <select ng-model="x">
+                <option value="sname">Student Name</option>
+                <option value="course">Course</option>
+            </select><br><br>
+            <input type="checkbox" ng-model="y"> Do you want Descending Order 
+            <br><br>
+            <table border="2">
+                <tr>
+                    <th>Sr No.</th>
+                    <th><a href="#" ng-click="x='sname';y=!y;">Student Name</a></th>
+                    <th><a href="#" ng-click="x='course';y=!y;">Course</a></th>
+                </tr>
+                <tr ng-repeat="item in stud|orderBy:x:y">
+                    <td>{{$index+1}}</td>
+                    <td>{{item.sname}}</td>
+                    <td>{{item.course}}</td>
+                </tr>
+            </table>
+        </div>
+        <script src="angular.js"></script>
+        <script>
+            var app = angular.module("sapp",[]);
+            app.controller("student",function($scope){
+                $scope.stud=[
+                    {sname:"Jignesh",course:"UI"},
+                    {sname:"Ankur",course:"Civil"},
+                    {sname:"Saurabh",course:"BBA"},
+                    {sname:"Jonty",course:"Diploma"}
+                ];
+            })
+        </script>
+    </body>

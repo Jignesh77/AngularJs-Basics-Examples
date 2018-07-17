@@ -1,0 +1,46 @@
+<html>
+   <head>
+       <title>Registration Form with Validations</title>
+       <style>
+           .c1{
+               color: red;
+           }            
+       </style>
+    </head> 
+    <body ng-app="form">
+        <h4>Registration Form</h4>
+        <hr>
+        <div ng-controller="registration">
+            <form name="reg" method="post" novalidate action="reg.php">
+                First Name : <input type="text" ng-model="fname" ng-required="true" name="t1">
+                <span class="c1" ng-show="reg.t1.$error.required && reg.t1.$dirty">First Name is Required</span>
+                <br><br>
+                Last Name ; <input type="text" ng-model="lname" ng-required="true" name="t2">
+                <span class="c1" ng-show="reg.t2.$error.required && reg.t2.$dirty">Last Name is Required</span>
+                <br><br>
+                City Name : <input type="text" ng-model="city" ng-required="true" ng-minlength="3" ng-maxlength="15" name="t3">
+                <span class="c1" ng-show="reg.t3.$error.minlength && reg.t3.$dirty">City Name must have at least 3 Characters</span>
+                <span class="c1" ng-show="reg.t3.$error.maxlength && reg.t3.$dirty">City Name must not exceed more than 10 characters</span>
+                <br><br>
+                E-mail : <input type="email" name="t4" ng-model="email">
+                <span class="c1" ng-show="reg.t4.$error.email && reg.t4.$dirty">Enter Valid Email</span>
+                <br><br>
+                Pincode : <input name="t5" ng-model="pin" ng-pattern="/^\d{6}$/">
+                <span class="c1" ng-show="reg.t5.$error.pattern && reg.t5.$dirty">Enter Valid Pincode</span>
+                <br><br>
+                <input type="submit" value="Register" ng-disabled="reg.$invalid">
+            </form>
+        </div>
+        <script src="angular.js"></script>
+        <script>
+            var f = angular.module("form",[]);
+            f.controller("registration",function($scope){
+                $scope.fname = "";
+                $scope.lname = "";
+                $scope.city = "";
+                $scope.email = "";
+                $scope.pin = "";
+            })
+        </script>
+    </body>
+</html>

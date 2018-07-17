@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>To Create custom Filter in AngularJs</title>
+    </head>
+    <body ng-app="fill">
+        <h2>Employee Details</h2>
+        <hr>
+        <div ng-controller="customFilter">
+            <h4>Employee 1</h4>
+            <hr width="30%" align="left">
+            Name : {{emp1.name|namefilter}}<br>
+            Gender : {{emp1.gen|genfilter}}
+            <br><br>
+            <h4>Employee 2</h4>
+            <hr width="30%" align="left">
+            Name : {{emp2.name|namefilter}}<br>
+            Gender : {{emp2.gen|genfilter}}
+            <br><br>
+        </div>
+        <script src="other/angular.js"></script>
+        <script src="other/filter-app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Selected Images to be displayed</title>
+    </head>
+    <body>
+        <script>
+            function jk(){
+                var a = document.getElementById("s1");
+                var i = document.getElementById("img1");
+                i.src = "images/"+a.value;
+            }
+        </script>
+       <select name="images" id="s1" onchange="jk()">
+            <option value="" disabled>Selejp Any 1 Image</option>
+            <option value="s1.png">Salman 1</option>
+            <option value="s2.jpg">Salman 2</option>
+            <option value="s3.jpg">Salman 3</option>
+            <option value="s4.jpg">Salman 4</option>
+            <option value="s5.jpg">Salman 5</option>
+            <option value="s6.jpg">Salman 6</option>
+        </select>
+        <img id ="img1"src="images/s1.png" height="400" width="300">
+    </body>
+</html>

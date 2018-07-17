@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Collection of Images</title>
+        <style>
+            *{margin: 0px;padding: 0px}
+            img{
+                width: 200px;
+                height: 280px;
+                border: 1px ridge blue;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body ng-app="" ng-init="images=['s1.png','s2.jpg','s3.jpg','s4.jpg','s5.jpg','s6.jpg','s7.jpg','s8.jpg']">
+        <div>
+            <ul style="list-style-type: none">
+                <li ng-repeat="items in images" style="border: 2px solid black;width: 200px; float: left;margin: 30px;padding: 5px;border-radius: 10px"><img src="images/{{items}}" title="{{items}}">
+                <p style="text-align: center">{{items}}</p>
+                </li>
+            </ul>
+                </div>
+        <script src="angular.js"></script>
+    </body>
+</html>

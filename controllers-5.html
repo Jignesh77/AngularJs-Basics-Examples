@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Product Details</title>
+        <style>
+            img{
+                border: 2px solid black;
+                width: 80px;
+                height: 65px;
+                padding: 4px;
+            }
+        </style>
+    </head>
+    <body ng-app="myApp">
+        <h3>Product Details</h3>
+        <hr>
+        <div ng-controller="product">
+            <table align="center" bgcolor="lightyellow" border="2">
+                <tr>
+                    <th>Product Name</th>
+                    <th>Brand</th>
+                    <th>Unit Price</th>
+                    <th>Picture</th>
+                </tr>
+                <tr ng-repeat="item in prod">
+                    <td>{{item.pname|uppercase}}</td>
+                    <td>{{item.brand|lowercase}}</td>
+                    <td>{{item.price|currency}}</td>
+                    <td><img src="images/{{item.picture}}"></td>
+                </tr>
+            </table>
+        </div>
+        <script src="angular.js"></script>
+        <script>
+            var app = angular.module("myApp",[]);
+            app.controller("product",function($scope){
+                $scope.prod=[{price:1007,pname:"canon",brand:"canon",picture:"s1.png"},
+            {price:1008,pname:"galaxy j7 pro",brand:"Samsung",picture:"s9.jpg"},
+            {price:1009,pname:"iphone x",brand:"apple",picture:"s11.jpg"}];
+            })
+        </script>
+    </body>
+</html>

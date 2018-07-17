@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>To Display Employee Details</title>
+        <style>
+            #d1,.d2{
+                border: 2px dashed blue;
+                font-size: 20px;
+                padding: 10px;
+                background-color: aqua;
+                color: blue;
+                border-radius: 20px;
+            }
+        </style>
+    </head>
+    <body ng-app="">
+        <div id="d1" ng-init="emp={empNo:1007,empName:'Jignesh',empJob:'MEAN Stack Developer', dept:{deptNo:07,deptName:'Technology',deptLoc:'Pune'}}" style="width:220">
+            Employee ID : {{emp.empNo}}<br>
+            Employee Name : {{emp.empName}}<br>
+            Employee Job : {{emp.empJob}}<br>
+            Employee Department : {{emp.dept.deptNo}}
+            <div class="d2" style="width:180">
+                Department No : {{emp.dept.deptNo}}
+                Department Name : {{emp.dept.deptName}}
+                Department Location : {{emp.dept.deptLoc}}
+            </div>
+        </div>
+        
+        <script src="angular.js"></script>
+    </body>
+</html>

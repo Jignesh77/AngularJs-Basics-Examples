@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <title>Processing collection of Courses</title>
+    </head>
+    <body ng-app="" ng-init="course=['HTML','CSS','BootStrap','JavaScript','jQuery','Angular Js','Node JS','Express Js','MongoDb']">
+        <ul style="list-style-type: none ">
+            <li ng-repeat="item in course" style="border: 1px solid black; width: 100px; float: left; margin-left: 20px;text-align: center; border-radius: 7px;">{{item}}</li>
+        </ul>
+        <script src="angular.js"></script>
+    </body>
+</html>

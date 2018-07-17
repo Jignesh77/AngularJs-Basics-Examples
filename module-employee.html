@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Creating Module</title>
+    </head>
+    <body ng-app="mod">
+        <h3>Module Creation</h3>
+        <hr>
+        <div ng-controller="personal">
+            Employee Name : {{name}}<br>
+            Employee Age :{{age}}<br>
+            <div ng-controller="professional">
+                Employee Job : {{job}}<br>
+                Employee Salary : {{sal|currency:"Rs. ":0}} PM<br>
+            </div>
+        </div>
+    </body>
+    <script src="angular.js"></script>
+    <script src="other/module-app.js"></script>
+</html>

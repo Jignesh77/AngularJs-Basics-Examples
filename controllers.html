@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>To display system information using controllers</title>
+    </head>
+    <body ng-app="myApp">
+        <h3>Controllers First Program</h3>
+        <hr size="3" noshade>
+        <div ng-controller="demoController">
+            student ID : {{sid}}<br>
+            Student Name : {{sname}}<br>
+            Course : {{course}}
+        </div>
+        <script src="angular.js"></script>
+        <script>
+            var app = angular.module("myApp",[]);
+            app.controller("demoController",function($scope)
+            {
+                           $scope.sid = 1007;
+                           $scope.sname = "Jignesh";
+                           $scope.course = "MEAN Stack"
+                           })
+        </script>
+    </body>
+</html>

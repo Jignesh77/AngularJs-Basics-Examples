@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Working with Ajax</title>
+    </head>
+    <body ng-app="aja">
+        <h3>Working with Ajax</h3>
+        <hr>
+        <div ng-controller="ajaCall">
+            <input type="button" ng-click="getd()" value="Get">
+            <br>
+            <br>
+            <table border="1">
+                <tr>
+                    <th>Department No</th>
+                    <th>Department Name</th>
+                    <th>Location</th>
+                </tr>
+                <tr ng-repeat="item in dept track by $index">
+                    <td>{{item.deptNo}}</td>
+                    <td>{{item.deptName}}</td>
+                    <td>{{item.loc}}</td>
+                </tr>
+            </table>
+        </div>
+        <script src="angular.js"></script>
+        <script>
+            var a = angular.module("aja",[]);
+            a.controller("ajaCall",function($scope,$http){
+                $scope.dept = [];
+                $scope.getd = function(){
+                    $http({
+                        url : "other/getdata.php",
+                        method : "get",
+                        data : "",
+                        headers : {
+                            "Content-Type" : "application/json"
+                        }
+                    })
+                    .then(function(response){
+                        $scope.dept = response.data;
+                    });
+                };
+            });
+        </script>
+    </body>
+</html>
